@@ -326,10 +326,4 @@ const verifyResetPasswordTokenAndResetPassword = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-export {
-  registerUser,
-  loginUser,
-  verifyEmail,
-  resetPasswordRequest,
-  verifyResetPasswordTokenAndResetPassword,
-};
+export { registerUser, loginUser, verifyEmail, resetPasswordRequest, verifyResetPasswordTokenAndResetPassword } 

@@ -2,29 +2,12 @@ import { BackButton } from "@/components/back-button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import {
-  useChangePassword,
-  useUpdateUserProfile,
-  useUserProfileQuery,
-} from "@/hooks/use-user";
+import { useChangePassword, useUpdateUserProfile, useUserProfileQuery } from "@/hooks/use-user";
 import { useAuth } from "@/provider/auth-context";
 import type { User } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,15 +17,9 @@ import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { z } from "zod";
 
-const changePasswordSchema = z
-  .object({
-    currentPassword: z
-      .string()
-      .min(1, { message: "Current password is required" }),
+const changePasswordSchema = z.object({currentPassword: z.string().min(1, { message: "Current password is required" }),
     newPassword: z.string().min(8, { message: "New password is required" }),
-    confirmPassword: z
-      .string()
-      .min(8, { message: "Confirm password is required" }),
+    confirmPassword: z.string().min(8, { message: "Confirm password is required" }),
   })
   .refine((data) => data.newPassword === data.confirmPassword, {
     message: "Passwords do not match",
@@ -181,8 +158,6 @@ const Profile = () => {
                     id="avatar-upload"
                     type="file"
                     accept="image/*"
-                    // onChange={handleAvatarChange}
-                    // disabled={uploading || isUpdatingProfile}
                     style={{ display: "none" }}
                   />
                   <Button
