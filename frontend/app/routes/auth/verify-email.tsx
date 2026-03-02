@@ -40,13 +40,7 @@ const VerifyEmail = () => {
       <p className="text-sm text-gray-500">Verifying your email...</p>
 
       <Card className="w-full max-w-md">
-        {/* <CardHeader>
-          <Link to="/sign-in" className="flex items-center gap-2 text-sm">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Sign in
-          </Link>
-        </CardHeader> */}
-
+      
         <CardContent>
           <div className="flex flex-col items-center justify-center py-6 ">
             {isVerifying ? (
